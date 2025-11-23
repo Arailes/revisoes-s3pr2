@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal MedReview - Guias de Revisão</title>
+    <style>
+        :root {
+            --primary-color: #005f73; /* Azul Petróleo */
+            --secondary-color: #0a9396; /* Turquesa Escuro */
+            --accent-color: #ee9b00; /* Amarelo Queimado para destaque */
+            --bg-color: #f4f6f8;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            width: 100%;
+        }
+
+        /* Grid de Botões */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        /* Estilo dos Cartões/Botões */
+        .category-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e1e1e1;
+            text-decoration: none;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        /* Ícones */
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem; /* Aumentei levemente o padding */
+            background-color: #e9ecef;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: auto;
+            
+            /* Flexbox para alinhar o texto e o botão */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem; 
+        }
+
+        /* Novo botão de Reclamações */
+        .complaint-btn {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            text-decoration: none;
+            border: 1px solid #bdc3c7;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+
+        .complaint-btn:hover {
+            background-color: #bdc3c7;
+            color: #fff;
+            border-color: #bdc3c7;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Portal MedReview</h1>
+        <p>Selecione a disciplina para acessar os guias de revisão</p>
+    </header>
+
+    <main>
+        <div class="categories-grid">
+            <a href="https://histo-s3.onrender.com" class="category-card" onclick="alert('Indo para Histologia...')">
+                <div class="icon">🔬</div>
+                <h2 class="category-title">Histologia</h2>
+                <p class="category-desc">Tecidos, células e estruturas microscópicas.</p>
+            </a>
+
+            <a href="https://anato-s3.onrender.com" class="category-card" onclick="alert('Indo para Anatomia...')">
+                <div class="icon">💀</div>
+                <h2 class="category-title">Anatomia</h2>
+                <p class="category-desc">Sistemas, órgãos e dissecação.</p>
+            </a>
+
+            <a href="https://parasito-s3.onrender.com/" class="category-card" onclick="alert('Indo para Parasitologia...')">
+                <div class="icon">🪱</div>
+                <h2 class="category-title">Parasitologia</h2>
+                <p class="category-desc">Protozoários, helmintos e vetores.</p>
+            </a>
+
+            <a href="https://imunologia.onrender.com/" class="category-card" onclick="alert('Indo para Imunologia...')">
+                <div class="icon">🛡️</div>
+                <h2 class="category-title">Imunologia</h2>
+                <p class="category-desc">Sistema imune, anticorpos e resposta inflamatória.</p>
+            </a>
+
+            <a href="https://pato-s3.onrender.com/" class="category-card" onclick="alert('Indo para Patologia...')">
+                <div class="icon">🦠</div>
+                <h2 class="category-title">Patologia</h2>
+                <p class="category-desc">Processos de doenças e alterações celulares.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <span>&copy; 2025 Portal MedReview - Feito para estudantes de medicina by Arailes Feitosa T6A IDOMED Quixada-CE.</span>
+        
+        <a href="https://i.pinimg.com/originals/d2/f6/31/d2f631333edec46949514ad118e1b94a.jpg?nii=t" class="complaint-btn">Reclamações / Suporte</a>
+    </footer>
+
+</body>
+</html>
